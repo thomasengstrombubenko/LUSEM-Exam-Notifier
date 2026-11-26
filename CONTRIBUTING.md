@@ -30,15 +30,18 @@ and enhancements that are useful to other users of the notifier.
   changes.
 - For changes to reminder parsing or scheduling, check the relevant calendar
   format and date behavior, including the configured timezone.
-- Before opening a pull request, run the syntax check:
+- Before opening a pull request, install the development dependencies and run
+  the checks:
 
   ```sh
+  python -m pip install -r requirements-dev.txt
   python -m py_compile main.py
+  python -m pytest
   ```
 
 - Pull requests are also checked by GitHub Actions on Python 3.10 and the
-  latest stable Python version. The workflow installs the project dependencies
-  and compiles `main.py`.
+  latest stable Python version. The workflow installs the project and
+  development dependencies, compiles `main.py`, and runs the test suite.
 - If your change can be tested safely against a test calendar or a test
   Listmonk instance, include the steps and results. Do not send test campaigns
   to real subscribers.
