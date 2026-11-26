@@ -1,0 +1,4 @@
+icalendar
+listmonk
+requests
+python-dotenv
